@@ -1,0 +1,32 @@
+services:
+  indra-ocr:
+    build: .
+    image: indra-ocr-api:latest
+    container_name: indra-ocr-api
+    ports:
+      - "8000:8000"
+    environment:
+      - INDRA_THREADS=4          # ONNX intra-op threads
+      - MAX_UPLOAD_MB=20
+      - MAX_PAGES=50
+      - PORT=8000
+    # Optional: persist model cache across rebuilds (speeds up rebuilds)
+    # volumes:
+    #   - hf-cache:/home/appuser/.cache/huggingface
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: "4.0"
+          memory: 2G
+        reservations:
+          memory: 1G
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+# volumes:
+#   hf-cache:
