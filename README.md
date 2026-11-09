@@ -126,4 +126,3 @@ Platform: `linux/amd64` by default.
 
 - [datalab-to/indra](https://github.com/datalab-to/indra) – official Indra OCR
 - FastAPI + Uvicorn
-```
