@@ -100,21 +100,6 @@ uvicorn server:app --reload --port 8000
 - Uses **single Uvicorn worker** (recommended with ONNX Runtime)
 - Models (~76 MB) are **pre-baked** into the image → fast cold start
 
-## Build & Publish
-
-```bash
-# Build
-docker build -t wereling1992/indra-ocr-api:1.0.0 .
-docker tag wereling1992/indra-ocr-api:1.0.0 wereling1992/indra-ocr-api:latest
-
-# Push to Docker Hub
-docker login
-docker push wereling1992/indra-ocr-api:1.0.0
-docker push wereling1992/indra-ocr-api:latest
-```
-
-Platform: `linux/amd64` by default.
-
 ## License
 
 - **This repository (code)**: [Apache-2.0](LICENSE)
