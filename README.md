@@ -95,7 +95,7 @@ uvicorn server:app --reload --port 8000
 | Scenario | RAM | CPU |
 |----------|-----|-----|
 | Minimum | 1.5–2 GB | 2 cores |
-| Comfortable | 2–4 GB | 2–4 cores |
+| Recommend | 2–4 GB | 2–4 cores |
 
 - Uses **single Uvicorn worker** (recommended with ONNX Runtime)
 - Models (~76 MB) are **pre-baked** into the image → fast cold start
