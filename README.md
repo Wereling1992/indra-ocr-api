@@ -92,7 +92,7 @@ uvicorn server:app --reload --port 8000
 
 ## Resource Recommendation
 
-| Scenario | RAM | CPU |
+| | RAM | CPU |
 |----------|-----|-----|
 | Minimum | 1.5–2 GB | 2 cores |
 | Recommend | 2–4 GB | 2–4 cores |
